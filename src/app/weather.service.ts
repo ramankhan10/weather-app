@@ -8,7 +8,7 @@ import { Weather } from './weather';
 })
 export class WeatherService {
   private apiUrl = 'https://api.openweathermap.org/data/2.5/';
-  private apiKey = '<1bedcb4b976e135ced0ecf6406ca4611>';
+  private apiKey = '1bedcb4b976e135ced0ecf6406ca4611';
 
   constructor(private http: HttpClient) {}
 
@@ -18,7 +18,7 @@ export class WeatherService {
       .set('q', city)
       .set('appId', this.apiKey);
 
-    return this.http.get<Weather>(this.apiUrl + 'weather', {
+    return this.http.get<Weather>(this.apiUrl + 'weather?', {
       params: options,
     });
   }
