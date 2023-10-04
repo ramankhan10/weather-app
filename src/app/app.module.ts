@@ -8,6 +8,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
@@ -18,12 +19,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatCardModule,
     MatInputModule,
     HttpClientModule,
+    MatSnackBarModule,
     MatIconModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [],
